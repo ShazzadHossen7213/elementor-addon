@@ -5,7 +5,7 @@
  * Description: Custom Elementor extension which includes custom widgets.
  * Plugin URL: https://example.com
  * Version: 1.0.0
- * Author: Al Mumeetu Saikat
+ * Author: Shazzad Hossen
  * Text Domain: elementor-addon
  * Domain Path: /languages
  */
@@ -238,9 +238,9 @@ final class Elementor_Addon_Extension
      */
     public function init_widgets()
     {
-         require_once(__DIR__ . '/widgets/elementor-test.php');
+         require_once(__DIR__ . '/widgets/elementor-Practice.php');
         // Register widgets, loading all widget names
-         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor_Test_Widget());
+         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor_Practice_Widget());
     }
 
     /**
@@ -255,9 +255,9 @@ final class Elementor_Addon_Extension
     public function init_controls()
     {
         // Include control files
-        // require_once(__DIR__ . '/controls/test-control.php');
+        // require_once(__DIR__ . '/controls/Practice-control.php');
         // Register control
-        // \Elementor\Plugin::$instance->controls_manager->register_control('control-type', new \Test_Control());
+        // \Elementor\Plugin::$instance->controls_manager->register_control('control-type', new \Practice_Control());
     }
 
     // Custom CSS
