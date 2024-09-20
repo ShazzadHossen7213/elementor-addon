@@ -16,7 +16,7 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-animation-text';
+		return 'eicon-text';
 	}
 
 	public function get_categories()
@@ -85,7 +85,7 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'color',
 			[
-				'label' => esc_html__('Color', 'textdomain'),
+				'label' => esc_html__('Color', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'red',
 				'options' => [
@@ -98,7 +98,21 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 			]
 		);
 
-
+		$this->add_control(
+			'showe_elements',
+			[
+				'label' => esc_html__( 'Show Elements', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple' => true,
+				'options' => [
+					'title'  => esc_html__( 'Title', 'elementor-addon' ),
+					'description' => esc_html__( 'Description', 'elementor-addon' ),
+					'button' => esc_html__( 'Button', 'elementor-addon' ),
+				],
+				'default' => [ 'title', 'description' ],
+			]
+		);
 		$this->end_controls_section();
 	}
 	protected function render()
