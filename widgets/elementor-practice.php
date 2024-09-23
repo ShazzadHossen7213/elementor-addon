@@ -70,6 +70,7 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 				'label' => esc_html__('Title', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'placeholder' => esc_html__('Enter your title', 'elementor-addon'),
+
 			]
 		);
 		$this->add_control(
@@ -99,7 +100,7 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
-			'showe_elements',
+			'show_elements',
 			[
 				'label' => esc_html__( 'Show Elements', 'elementor-addon' ),
 				'type' => \Elementor\Controls_Manager::SELECT2,
@@ -113,6 +114,52 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 				'default' => [ 'title', 'description' ],
 			]
 		);
+
+				$this->add_control(
+			'price',
+			[
+				'label' => esc_html__( 'Price', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'min' => 5,
+				'max' => 100,
+				'step' => 5,
+				'default' => 20,
+				'separator'=>'default',
+			]
+		);
+
+		$this->add_control(
+			'item_description',
+			[
+				'label' => esc_html__( 'Description', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'rows' => 10,
+				'default' => esc_html__( 'Default description', 'elementor-addon' ),
+				'placeholder' => esc_html__( 'Type your description here', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'rich_description',
+			[
+				'label' => esc_html__( 'Rich Description', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::WYSIWYG,
+				'rows' => 10,
+				'default' => esc_html__( 'Default description', 'elementor-addon' ),
+				'placeholder' => esc_html__( 'Type your description here', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'custom_html',
+			[
+				'label' => esc_html__( 'Custom HTML', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::CODE,
+				'language' => 'html',
+				'rows' => 20,
+			]
+		);
+
 		$this->end_controls_section();
 	}
 	protected function render()
@@ -126,12 +173,13 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		}
 		?>
 		<h4 style="Color:<?php echo $settings['color']; ?>">Title: <?php echo $settings['title']; ?></h4>
+		<h4>price: <?php echo $settings['price']; ?></h4>
 		<h4>Number: <?php echo $settings['number']; ?></h4>
-		<h4>Description: <?php echo $settings['desc']; ?></h4>
-		<h4>Rich description: <?php echo $settings['rich_descr']; ?></h4>
+		<h4>Description: <?php echo $settings['item_description']; ?></h4>
+		<h4>Rich description: <?php echo $settings['rich_description']; ?></h4>
 
 		<code>
-			<?php echo $settings['code']; ?>
+			<?php echo $settings['custom_html']; ?>
 		</code>
 <?php
 
