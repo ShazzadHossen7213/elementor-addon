@@ -116,9 +116,9 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		);
 
 				$this->add_control(
-			'price',
+			'number',
 			[
-				'label' => esc_html__( 'Price', 'elementor-addon' ),
+				'label' => esc_html__( 'Number', 'elementor-addon' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'min' => 5,
 				'max' => 100,
@@ -173,11 +173,9 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		}
 		?>
 		<h4 style="Color:<?php echo $settings['color']; ?>">Title: <?php echo $settings['title']; ?></h4>
-		<h4>price: <?php echo $settings['price']; ?></h4>
 		<h4>Number: <?php echo $settings['number']; ?></h4>
 		<h4>Description: <?php echo $settings['item_description']; ?></h4>
 		<h4>Rich description: <?php echo $settings['rich_description']; ?></h4>
-
 		<code>
 			<?php echo $settings['custom_html']; ?>
 		</code>
