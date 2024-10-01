@@ -153,6 +153,7 @@ final class Elementor_Addon_Extension
         add_action('elementor/init', [$this, 'elementor_addon_category']);
     }
 
+
     /**
      * Admin Notice
      * 
@@ -238,10 +239,11 @@ final class Elementor_Addon_Extension
      */
     public function init_widgets()
     {
-         require_once(__DIR__ . '/widgets/elementor-Practice.php');
-        // Register widgets, loading all widget names
-         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor_Practice_Widget());
+        require_once(__DIR__ . '/widgets/elementor-Practice.php');
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor_Practice_Widget());
     }
+
+
 
     /**
      * Init Controls
@@ -273,6 +275,9 @@ final class Elementor_Addon_Extension
         wp_register_script('elementor-addon-js', plugins_url('main.js', __FILE__));
         wp_enqueue_script('elementor-addon-js');
     }
+
+
+
 
     // Custom Category
     public function elementor_addon_category()

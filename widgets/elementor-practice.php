@@ -49,6 +49,33 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$this->add_control(
+			'text_align',
+			[
+				'label' => esc_html__('Alignment', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__('Left', 'elementor-addon'),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__('Center', 'elementor-addon'),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__('Right', 'elementor-addon'),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .your-class' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 		//Hidden Controls
 		$this->add_control(
 			'show_title',
@@ -102,58 +129,58 @@ class Elementor_Practice_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'show_elements',
 			[
-				'label' => esc_html__( 'Show Elements', 'elementor-addon' ),
+				'label' => esc_html__('Show Elements', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple' => true,
 				'options' => [
-					'title'  => esc_html__( 'Title', 'elementor-addon' ),
-					'description' => esc_html__( 'Description', 'elementor-addon' ),
-					'button' => esc_html__( 'Button', 'elementor-addon' ),
+					'title'  => esc_html__('Title', 'elementor-addon'),
+					'description' => esc_html__('Description', 'elementor-addon'),
+					'button' => esc_html__('Button', 'elementor-addon'),
 				],
-				'default' => [ 'title', 'description' ],
+				'default' => ['title', 'description'],
 			]
 		);
 
-				$this->add_control(
+		$this->add_control(
 			'number',
 			[
-				'label' => esc_html__( 'Number', 'elementor-addon' ),
+				'label' => esc_html__('Number', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'min' => 5,
 				'max' => 100,
 				'step' => 5,
 				'default' => 20,
-				'separator'=>'default',
+				'separator' => 'default',
 			]
 		);
 
 		$this->add_control(
 			'item_description',
 			[
-				'label' => esc_html__( 'Description', 'elementor-addon' ),
+				'label' => esc_html__('Description', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'rows' => 10,
-				'default' => esc_html__( 'Default description', 'elementor-addon' ),
-				'placeholder' => esc_html__( 'Type your description here', 'elementor-addon' ),
+				'default' => esc_html__('Default description', 'elementor-addon'),
+				'placeholder' => esc_html__('Type your description here', 'elementor-addon'),
 			]
 		);
 
 		$this->add_control(
 			'rich_description',
 			[
-				'label' => esc_html__( 'Rich Description', 'elementor-addon' ),
+				'label' => esc_html__('Rich Description', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,
 				'rows' => 10,
-				'default' => esc_html__( 'Default description', 'elementor-addon' ),
-				'placeholder' => esc_html__( 'Type your description here', 'elementor-addon' ),
+				'default' => esc_html__('Default description', 'elementor-addon'),
+				'placeholder' => esc_html__('Type your description here', 'elementor-addon'),
 			]
 		);
 
 		$this->add_control(
 			'custom_html',
 			[
-				'label' => esc_html__( 'Custom HTML', 'elementor-addon' ),
+				'label' => esc_html__('Custom HTML', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::CODE,
 				'language' => 'html',
 				'rows' => 20,
